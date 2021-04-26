@@ -51,9 +51,11 @@
 
       <h3><i class="bi bi-speedometer2 me-2"></i>DASHBOARD</h3><hr>
 
-      <div class="row row-cols-auto text-white">
+      <div class="row text-white">
 
-        <div class="col-md-3">
+    
+
+        <div class="col-md-3 col-sm-12 mb-2">
           <div class="card bg-primary" style="width: 15rem;">
           <div class="card-body ">
             <div class="card-body-icon">
@@ -66,7 +68,7 @@
         </div>
       </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12 mb-2">
           <div class="card bg-info" style="width: 15rem;">
           <div class="card-body ">
             <div class="card-body-icon">
@@ -79,7 +81,7 @@
         </div>
       </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12 mb-2">
           <div class="card bg-danger" style="width: 15rem;">
           <div class="card-body ">
             <div class="card-body-icon">

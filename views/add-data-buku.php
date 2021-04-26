@@ -117,7 +117,7 @@ if(isset($_POST['btnTambah'])){
 
                             <div class="col-md-3">
 
-                                <input class="form-control" type="text" id="tahunTerbit" name="tahunTerbit" autocomplete="off" required>
+                                <input class="form-control" type="number" id="tahunTerbit" name="tahunTerbit" autocomplete="off" required>
                             
                             </div>
                     

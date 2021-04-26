@@ -90,7 +90,7 @@ $no = 1;
               <td><?=$datas['penerbit'];?></td>
               <td>
                   <a href="views/edit-data-buku.php?kodeBuku=<?=$datas['kode_buku'];?>"><i style="font-size: 20px;" class="bi bi-pencil-square"></i></a>
-                  <a name="hapusData" onclick="hapus()" href="delete-data-buku.php?kodeBuku=<?=$datas['kode_buku'];?>"><i style="font-size: 20px; color: red;" class="bi bi-trash"></i></a>
+                  <a name="hapusData" onclick="hapus()"><i style="font-size: 20px; color: red;" class="bi bi-trash"></i></a>
               </td>
 
           </tr>
@@ -128,8 +128,11 @@ $no = 1;
 
         function hapus(){
 
-            confirm("Apakah anda ingin menghapus data ini ?");
+            if(confirm("Apakah anda ingin menghapus data ini ?")){
 
+              document.location.href = 'delete-data-buku.php?kodeBuku=<?=$datas['kode_buku'];?>';
+
+            }
 
         }
     
