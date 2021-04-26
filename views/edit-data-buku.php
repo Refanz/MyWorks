@@ -29,54 +29,110 @@ if(isset($_POST['btnEdit'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/bootstrap-5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-icons-1.3.0/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/dashboard/admin.css">
     <title>Edit Data Buku</title>
 </head>
-<body>
 
-<form action="" method="post">
+<body style="overflow-x: hidden;">
 
+<div class="header">
 
+        <?php include 'dashboard-admin/header.php' ?>
 
-<label for="judulBuku">Judul Buku</label>
+  </div>
 
-    <input type="hidden" name="kodeBuku" value="<?=$dataBuku['kode_buku'];?>">
+  <div class="main">
 
-    <input type="text" id="judulBuku" name="judulBuku" value="<?=$dataBuku['judul_buku'];?>" autocomplete="off" >
+        <div class="row no-gutters">
 
-    <br>
-    <br>
+            <?php include 'dashboard-admin/sidebar.php'?>
 
-    <label for="namaPengarang">Nama Pengarang</label>
-    <input type="text" id="namaPengarang" name="namaPengarang" value="<?=$dataBuku['nama_pengarang'];?>" autocomplete="off" >
+                <div class="col-md-10 p-5 pt-3">
 
-    <br>
-    <br>
+                <h3><i class="bi bi-book-half me-2"></i>EDIT DATA BUKU</h3><hr>
 
-    <label for="tahunTerbit">Tahun Terbit</label>
-    <input type="text" id="tahunTerbit" name="tahunTerbit" value="<?=$dataBuku['tahun_terbit'];?>" autocomplete="off">
+                    <form action="" method="post">
 
-    <br>
-    <br>
+                    <div class="mb-3 row">
 
-    <label for="penerbit">Penerbit</label>
-    <input type="text" id="penerbit" name="penerbit" value="<?=$dataBuku['penerbit'];?>" autocomplete="off">
+                        <label for="judulBuku" class=" col-md-2 form-label fw-bold">Judul Buku</label>
 
-    <br>
-    <br>
+                            <div class="col-md-3">
 
-    <button name="btnEdit">Edit</button>
+                                <input type="hidden" name="kodeBuku" value="<?=$dataBuku['kode_buku'];?>">  
 
+                                <input type="text" id="judulBuku" name="judulBuku" autocomplete="off" class="form-control" value="<?=$dataBuku['judul_buku'];?>" required >
 
-</form>
+                            </div>
+
+                    </div>
 
 
+                    <div class="mb-3 row">
+
+                        <label for="namaPengarang" class=" col-md-2 form-label fw-bold">Nama Pengarang</label>
+
+                            <div class="col-md-3">
+
+                                <input type="text" id="namaPengarang" name="namaPengarang" autocomplete="off" class="form-control" value="<?=$dataBuku['nama_pengarang'];?>" required >
+
+                            </div>
+
+                    </div>
+
+                    <div class="mb-3 row">
+
+                        <label for="tahunTerbit" class="col-md-2 form-label fw-bold">Tahun Terbit</label>
+
+                            <div class="col-md-3">
+
+                                <input class="form-control" type="number" id="tahunTerbit" name="tahunTerbit" value="<?=$dataBuku['tahun_terbit'];?>" autocomplete="off" required>
+                            
+                            </div>
+                    
+                    </div>
+
+                    <div class="mb-3 row">
+
+                        <label for="penerbit" class="col-md-2 form-label fw-bold">Penerbit</label>
+
+                            <div class="col-md-3">
+
+                                <input class="form-control" type="text" id="penerbit" value="<?=$dataBuku['penerbit'];?>" name="penerbit" autocomplete="off"required>
+                            
+                            </div>
+                    
+                    </div>
+
+                     <div class="mb-3 row">
+
+                        <div class="col-md-2">
+
+                            <button name="btnEdit" class="btn btn-primary">Edit</button>
+
+                        </div>
+                    
+                    </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+  </div>
 
 
 
 
 
 
-</form>
+
+
+
+<script src="assets/bootstrap-5.0.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>

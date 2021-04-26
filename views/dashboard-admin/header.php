@@ -2,7 +2,7 @@
 
         <div class="container-fluid">
 
-        <a class="navbar-brand" href="#">SELAMAT DATANG ADMIN | <b>PERPUSTAKAAN</b></a>
+        <a class="navbar-brand" href="#">SELAMAT DATANG ADMIN | <br><b>PERPUSTAKAAN</b></a>
 
         <div class="icon">
 

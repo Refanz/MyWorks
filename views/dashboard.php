@@ -53,7 +53,6 @@
 
       <div class="row text-white">
 
-    
 
         <div class="col-md-3 col-sm-12 mb-2">
           <div class="card bg-primary" style="width: 15rem;">

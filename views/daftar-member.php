@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../assets/FixedHeader-3.1.8/css/fixedHeader.bootstrap.min.css">
     <link rel="stylesheet" href="../assets/Responsive-2.2.7/css/responsive.bootstrap.min.css">
 
-    <title>Index</title>
+    <title>Daftar Member</title>
 
   </head>
 
@@ -51,7 +51,7 @@
 
         <div class="col-md-3">
 
-            <button class="btn btn-info text-white fw-bold">TAMBAH DATA MEMBER</button>
+             <a href="add-data-member.php" class="btn btn-info text-white fw-bold">TAMBAH DATA MEMBER</a>
         
         </div>
 
@@ -90,9 +90,9 @@
                       <td><?=$datas['nomer_hp'];?></td>
                       <td>
 
-                        <a href="views/edit-data-member.php?kodeMember=<?=$datas['kode_peminjam'];?>"><i style="font-size: 20px;" class="bi bi-pencil-square"></i></a>
-                        <a href="views/delete-data-member.php?kodeMember=<?=$datas['kode_peminjam'];?>"><i style="font-size: 20px; color: red;" class="bi bi-trash"></i></a>
-                        <a href="views/edit-data-member.php?kodeMember=<?=$datas['kode_peminjam'];?>"><i style="font-size: 20px; color:green;" class="bi bi-printer"></i></a>
+                        <a href="edit-data-member.php?kodeMember=<?=$datas['kode_peminjam'];?>"><i style="font-size: 20px;" class="bi bi-pencil-square"></i></a>
+                        <a onclick="hapus()"><i style="font-size: 20px; color: red;" class="bi bi-trash"></i></a>
+                        <a href="print-data-member.php?kodeMember=<?=$datas['kode_peminjam'];?>"><i style="font-size: 20px; color:green;" class="bi bi-printer"></i></a>
                       
                       </td>
                   
@@ -140,13 +140,23 @@
         $(document).ready(function(){
            var table =  $('#table2').DataTable({
 
-            
-
 
            });
 
          
         });
+
+        function hapus(){
+
+            if(confirm("Apakah anda ingin menghapus data ini ?")){
+
+                document.location.href = 'delete-data-member.php?kodeMember=<?=$datas['kode_peminjam'];?>';
+
+                exit;
+
+            }
+
+        }
     
     </script>
       

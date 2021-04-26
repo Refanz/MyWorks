@@ -54,7 +54,7 @@ if(isset($_POST['btnTambah'])){
     
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
 
 <div class="header">
 

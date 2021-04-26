@@ -2,6 +2,88 @@
 
     $koneksi = mysqli_connect("localhost","root","","db_perpustakaan");
 
+
+    class member{
+
+        public function tambahData($data){
+
+            global $koneksi;
+
+            $kodeMember = htmlspecialchars($data["kodeMember"]);
+            $namaMember = htmlspecialchars($data["namaMember"]);
+            $tempatLahir = htmlspecialchars($data["tempatLahir"]);
+            $tanggalLahir = htmlspecialchars($data["tanggalLahir"]);
+            $jenisKelamin = htmlspecialchars($data["jenisKelamin"]);
+            $nomerHp = htmlspecialchars($data["nomerHp"]);
+
+            $query = "INSERT INTO tb_peminjam (
+                
+                kode_peminjam,
+                nama_peminjam,
+                tempat_lahir,
+                tanggal_lahir,
+                jenis_kelamin,
+                nomer_hp)
+
+                VALUES (
+
+                    '$kodeMember',
+                    '$namaMember',
+                    '$tempatLahir',
+                    '$tanggalLahir',
+                    '$jenisKelamin',
+                    '$nomerHp')";
+
+            $tambahData = mysqli_query($koneksi,$query);
+
+            return mysqli_affected_rows($koneksi);
+
+
+
+        }
+
+        public function ediData($data){
+
+            global $koneksi;
+
+            $kodeMember = htmlspecialchars($data["kodeMember"]);
+
+            $namaMember = htmlspecialchars($data["namaMember"]);
+
+            $tempatLahir = htmlspecialchars($data["tempatLahir"]);
+
+            $tanggalLahir = htmlspecialchars($data["tanggalLahir"]);
+
+            $jenisKelamin = htmlspecialchars($data["jenisKelamin"]);
+
+            $nomerHp = htmlspecialchars($data["nomerHp"]);
+
+            $query = "UPDATE 
+                            tb_peminjam 
+                    SET 
+                            kode_peminjam = '$kodeMember',
+                            nama_peminjam = '$namaMember',
+                            tempat_lahir = '$tempatLahir',
+                            tanggal_lahir = '$tanggalLahir',
+                            jenis_kelamin = '$jenisKelamin',
+                            nomer_hp = '$nomerHp'
+
+                    WHERE 
+                            kode_peminjam = '$kodeMember'
+                            ";
+            
+            $editData = mysqli_query($koneksi,$query);
+            
+            return mysqli_affected_rows($koneksi);
+
+
+        }
+
+
+
+
+    }
+
     function lihatData($query){
 
         global $koneksi;
@@ -18,17 +100,17 @@
 
         global $koneksi;
 
-        $rakBuku = mysqli_query($koneksi,$query);
+        $rakData = mysqli_query($koneksi,$query);
 
-        $kotakBuku = [];
+        $kotakData = [];
 
-        while($buku = mysqli_fetch_assoc($rakBuku)){
+        while($data = mysqli_fetch_assoc($rakData)){
 
-            $kotakBuku[] = $buku;
+            $kotakData[] = $data;
 
         }
 
-        return $kotakBuku;
+        return $kotakData;
 
     }
 

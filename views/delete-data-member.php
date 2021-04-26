@@ -2,9 +2,9 @@
 
 require '../services/functions.php';
 
-$kodeBuku = $_GET['kodeBuku'];
+$kodeMember = $_GET['kodeMember'];
 
-$query = "DELETE FROM tb_buku WHERE kode_buku ='$kodeBuku'";
+$query = "DELETE FROM tb_peminjam WHERE kode_peminjam ='$kodeMember'";
 
 $deleteData = mysqli_query($koneksi,$query);
 
@@ -14,7 +14,7 @@ if($deleteData){
 
         <script>
             alert('Data berhasil dihapus');
-            document.location.href='daftar-buku.php';
+            document.location.href='daftar-member.php';
         </script>
     
     

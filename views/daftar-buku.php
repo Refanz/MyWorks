@@ -89,7 +89,7 @@ $no = 1;
               <td><?=$datas['tahun_terbit'];?></td>
               <td><?=$datas['penerbit'];?></td>
               <td>
-                  <a href="views/edit-data-buku.php?kodeBuku=<?=$datas['kode_buku'];?>"><i style="font-size: 20px;" class="bi bi-pencil-square"></i></a>
+                  <a href="edit-data-buku.php?kodeBuku=<?=$datas['kode_buku'];?>"><i style="font-size: 20px;" class="bi bi-pencil-square"></i></a>
                   <a name="hapusData" onclick="hapus()"><i style="font-size: 20px; color: red;" class="bi bi-trash"></i></a>
               </td>
 
@@ -131,6 +131,8 @@ $no = 1;
             if(confirm("Apakah anda ingin menghapus data ini ?")){
 
               document.location.href = 'delete-data-buku.php?kodeBuku=<?=$datas['kode_buku'];?>';
+
+              exit;
 
             }
 
