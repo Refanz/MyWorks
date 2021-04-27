@@ -57,6 +57,18 @@ if(isset($_POST['btnEdit'])){
 
                     <div class="mb-3 row">
 
+                        <label for="kodeBuku" class=" col-md-2 form-label fw-bold">Kode Buku Buku</label>
+
+                            <div class="col-md-3">
+
+                                <input class="form-control" id="kodeBuku" readonly type="text" name="kodeBuku" value="<?=$dataBuku['kode_buku'];?>">  
+
+                            </div>
+
+                    </div>
+
+                    <div class="mb-3 row">
+
                         <label for="judulBuku" class=" col-md-2 form-label fw-bold">Judul Buku</label>
 
                             <div class="col-md-3">

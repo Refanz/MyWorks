@@ -271,7 +271,7 @@
 
                 <script>
                     alert('Berhasil login');
-                    document.location.href = 'index.php';
+                    document.location.href = 'views/dashboard.php';
                 </script>
                 
         
@@ -283,6 +283,44 @@
         }
 
         $error = true;
+
+
+    }
+
+    function kodeOtomatis($query,$hrf){
+
+        global $koneksi;
+
+        $ambilDataTerbesar = mysqli_query($koneksi,$query);
+
+        $data = mysqli_fetch_assoc($ambilDataTerbesar);
+
+        $kodeData = $data['kodeTerbesar'];
+
+        $urutan = (int) substr($kodeData, 4, 4);
+
+        $urutan++;
+
+        $huruf = $hrf;
+
+        $kodeData = $huruf . sprintf("%04s", $urutan);
+
+
+        return $kodeData;
+
+
+    }
+
+
+    function logout(){
+
+        session_start();
+
+        session_unset();
+
+        session_destroy();
+
+        $_SESSION = [];
 
 
     }

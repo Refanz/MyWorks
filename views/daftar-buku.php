@@ -3,9 +3,15 @@
 
 require '../services/functions.php';
 
-$dataBuku = tampilData("SELECT * FROM tb_buku");
+session_start();
 
-$no = 1;
+if(!isset($_SESSION["login"])){
+    header("Location: ../form-login.php");
+    exit;
+
+}
+
+$dataBuku = tampilData("SELECT * FROM tb_buku");
 
 
 ?>
@@ -71,7 +77,6 @@ $no = 1;
 
       <thead>
           <tr>
-              <th>NO</th>
               <th>KODE BUKU</th>
               <th>JUDUL BUKU</th>
               <th>NAMA PENGARANG</th>
@@ -87,7 +92,7 @@ $no = 1;
 
           <tr>
 
-              <td><?=$no++;?></td>
+    
               <td><?=$datas['kode_buku'];?></td>
               <td><?=$datas['judul_buku'];?></td>
               <td><?=$datas['nama_pengarang'];?></td>
@@ -102,7 +107,7 @@ $no = 1;
 
           <?php endforeach;?>
 
-          <?php $no;?>
+         
       
       </tbody>
 

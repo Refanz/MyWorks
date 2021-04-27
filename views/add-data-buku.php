@@ -2,6 +2,8 @@
 
 require '../services/functions.php';
 
+$kdData = kodeOtomatis("SELECT max(kode_buku) as kodeTerbesar FROM tb_buku","B");
+
 if(isset($_POST['btnTambah'])){
 
 
@@ -80,7 +82,7 @@ if(isset($_POST['btnTambah'])){
 
                             <div class="col-md-3">
 
-                                <input type="text" id="kodeBuku" name="kodeBuku" autocomplete="off" class="form-control" required >
+                                <input readonly type="text" id="kodeBuku" name="kodeBuku" autocomplete="off" class="form-control" value="<?=$kdData;?>" required >
 
                             </div>
                     

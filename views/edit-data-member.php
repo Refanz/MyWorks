@@ -84,7 +84,7 @@ if(isset($_POST['btnEdit'])){
 
                             <div class="col-md-3">
 
-                                <input type="text" id="kodeMember" value="<?=$dataMember['kode_peminjam'];?>" name="kodeMember" autocomplete="off" class="form-control" required >
+                                <input readonly type="text" id="kodeMember" value="<?=$dataMember['kode_peminjam'];?>" name="kodeMember" autocomplete="off" class="form-control" required >
 
                             </div>
                     
