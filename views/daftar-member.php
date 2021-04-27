@@ -18,12 +18,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../assets/bootstrap-5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/data-table/DataTables-1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../assets/FixedHeader-3.1.8/css/fixedHeader.bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/Responsive-2.2.7/css/responsive.bootstrap4.min.css">
+
+
     <link rel="stylesheet" href="../assets/bootstrap-icons-1.3.0/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/dashboard/admin.css">
-    <link rel="stylesheet" href="../assets/data-table/DataTables-1.10.24/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="../assets/data-table/DataTables-1.10.24/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/FixedHeader-3.1.8/css/fixedHeader.bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/Responsive-2.2.7/css/responsive.bootstrap.min.css">
 
     <title>Daftar Member</title>
 
@@ -58,7 +59,7 @@
     </div>
 
 
-        <table id="table2" class="table table-striped table-bordered nowrap" border="1" cellpadding = "10" cellspacing = "10" style="width: 100%;">
+        <table id="table2" class="table table-striped table-bordered nowrap"  style="width: 100%;">
 
             <thead>
 
@@ -126,22 +127,28 @@
 
 
     <script src="../assets/data-table/jQuery-3.3.1/jquery-3.3.1.js"></script>
-    
-    <script src="../assets/bootstrap-5.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/dashboard/admin.js"></script>
     <script src="../assets/data-table/DataTables-1.10.24/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/data-table/DataTables-1.10.24/js/dataTables.bootstrap.min.js"></script>
+    <script src="../assets/data-table/DataTables-1.10.24/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/FixedHeader-3.1.8/js/dataTables.fixedHeader.min.js"></script>
     <script src="../assets/Responsive-2.2.7/js/dataTables.responsive.min.js"></script>
-    <script src="../assets/Responsive-2.2.7/js/responsive.bootstrap.min.js"></script>
+    <script src="../assets/Responsive-2.2.7/js/responsive.bootstrap4.min.js"></script>
+    
+   
+
+    <script src="../assets/bootstrap-5.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/dashboard/admin.js"></script>
 
     <script>
 
         $(document).ready(function(){
            var table =  $('#table2').DataTable({
 
+                responsive : true
+
 
            });
+
+           new $.fn.dataTable.FixedHeader( table );
 
          
         });
