@@ -51,7 +51,7 @@
             <div class="card">
             <div class="card-header">
                 <h3 class="fw-bold text-center">FORM LOGIN</h3>
-                <?php if(isset($error)):?>
+                <?php if(isset($_POST["error"])):?>
 
                     <p class="text-danger fst-italic text-center">Username / Password salah</p>
 
@@ -64,7 +64,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control"  id="username" name="username">
+                                <input type="text" class="form-control"  id="username" name="username" autocomplete="off">
                             </div>
                         </div>
                     </div>

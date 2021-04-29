@@ -2,14 +2,6 @@
 
   require '../services/functions.php';
 
-  session_start();
-
-  if(!isset($_SESSION["login"])){
-    header("Location: ../form-login.php");
-    exit;
-
-  }
-
   $peminjam = mysqli_num_rows(lihatData("SELECT * FROM tb_peminjam"));
 
   $buku = mysqli_num_rows(lihatData("SELECT * FROM tb_buku"));

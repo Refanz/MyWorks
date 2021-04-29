@@ -2,6 +2,14 @@
 
 require '../services/functions.php';
 
+session_start();
+
+if(!isset($_SESSION["login"])){
+  header("Location: ../form-login.php");
+  exit;
+
+}
+
 $kodeBuku = $_GET['kodeBuku'];
 
 $query = "DELETE FROM tb_buku WHERE kode_buku ='$kodeBuku'";

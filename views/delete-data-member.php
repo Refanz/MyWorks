@@ -2,6 +2,14 @@
 
 require '../services/functions.php';
 
+session_start();
+
+if(!isset($_SESSION["login"])){
+  header("Location: ../form-login.php");
+  exit;
+
+}
+
 $kodeMember = $_GET['kodeMember'];
 
 $query = "DELETE FROM tb_peminjam WHERE kode_peminjam ='$kodeMember'";

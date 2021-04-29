@@ -282,7 +282,7 @@
             }
         }
 
-        $error = true;
+        return $_POST["error"] = true;
 
 
     }

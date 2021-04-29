@@ -1,3 +1,14 @@
+<?php
+
+  session_start();
+
+  if(!isset($_SESSION["login"])){
+      header("Location: ../form-login.php");
+      exit;
+
+  }
+
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient">
 
         <div class="container-fluid">

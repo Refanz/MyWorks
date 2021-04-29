@@ -1,5 +1,12 @@
 <?php
 
+    session_start();
+
+    if(isset($_SESSION["login"])){
+        header("Location: /views/dashboard.php");
+        exit;
+    }
+
     require 'services/functions.php';
 
     if(isset($_POST['registrasi'])){
