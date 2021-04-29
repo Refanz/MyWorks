@@ -42,7 +42,7 @@
 
         }
 
-        public function ediData($data){
+        public function editData($data){
 
             global $koneksi;
 
@@ -79,6 +79,77 @@
 
         }
 
+
+
+
+    }
+
+    class peminjaman{
+
+        public function tambahData($data){
+
+            global $koneksi;
+
+            $kodePinjam = htmlspecialchars($data["kodePinjam"]);
+            $namaPeminjam = htmlspecialchars($data["namaPeminjam"]);
+            $judulBuku = htmlspecialchars($data["judulBuku"]);
+            $tanggalPinjam = htmlspecialchars($data["tanggalPinjam"]);
+            $tanggalKembali = htmlspecialchars($data["tanggalKembali"]);
+    
+
+            $query = "INSERT INTO tb_data_peminjaman (
+                
+                kode_pinjam,
+                nama_peminjam,
+                judul_buku,
+                tanggal_pinjam,
+                tanggal_kembali)
+
+                VALUES (
+
+                    '$kodePinjam',
+                    '$namaPeminjam',
+                    '$judulBuku',
+                    '$tanggalPinjam',
+                    '$tanggalKembali')";
+
+            $tambahData = mysqli_query($koneksi,$query);
+
+            return mysqli_affected_rows($koneksi);
+
+
+
+        }
+
+        public function editData($data){
+
+            global $koneksi;
+
+            $kodePinjam = htmlspecialchars($data["kodePinjam"]);
+            $namaPeminjam = htmlspecialchars($data["namaPeminjam"]);
+            $judulBuku = htmlspecialchars($data["judulBuku"]);
+            $tanggalPinjam = htmlspecialchars($data["tanggalPinjam"]);
+            $tanggalKembali = htmlspecialchars($data["tanggalKembali"]);
+
+            $query = "UPDATE 
+                            tb_data_peminjaman 
+                    SET 
+                            kode_pinjam = '$kodePinjam',
+                            nama_peminjam = '$namaPeminjam',
+                            judul_buku = '$judulBuku',
+                            tanggal_pinjam = '$tanggalPinjam',
+                            tanggal_kembali = '$tanggalKembali'
+
+                    WHERE 
+                    kode_pinjam = '$kodePinjam'
+                            ";
+            
+            $editData = mysqli_query($koneksi,$query);
+            
+            return mysqli_affected_rows($koneksi);
+
+
+        }
 
 
 

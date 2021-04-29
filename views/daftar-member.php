@@ -6,7 +6,6 @@ require '../services/functions.php';
 
 $dataMember = tampilData("SELECT * FROM tb_peminjam");
 
-$no = 1;
 
 ?>
 
@@ -105,7 +104,7 @@ $no = 1;
 
                   <?php endforeach;?>
 
-                  <?php $no;?>
+    
           
             </tbody>
         

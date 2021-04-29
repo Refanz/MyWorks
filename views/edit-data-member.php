@@ -12,7 +12,7 @@ $dataMember = tampilData("SELECT * FROM tb_peminjam WHERE kode_peminjam = '$kode
 
 if(isset($_POST['btnEdit'])){
 
-    if($fungsi->ediData($_POST) > 0){
+    if($fungsi->editData($_POST) > 0){
 
         echo "
         
