@@ -232,9 +232,12 @@
 
         $password1 = password_hash($password1, PASSWORD_DEFAULT);
 
+        //primary key
+        $kdData = kodeOtomatis("SELECT max(kode_admin) as kodeTerbesar FROM tb_admin","A");
+
         //tambahkan user baru ke database 
 
-        mysqli_query($koneksi,"INSERT INTO tb_admin (nama_admin,sandi_admin) VALUES ('$username','$password1')");
+        mysqli_query($koneksi,"INSERT INTO tb_admin (kode_admin,nama_admin,sandi_admin) VALUES ('$kdData','$username','$password1')");
 
         return mysqli_affected_rows($koneksi);
 

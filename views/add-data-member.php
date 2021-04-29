@@ -1,5 +1,7 @@
 <?php 
 
+include_once('../services/session.php');
+
 require '../services/functions.php';
 
 $kdData = kodeOtomatis("SELECT max(kode_peminjam) as kodeTerbesar FROM tb_peminjam","M");

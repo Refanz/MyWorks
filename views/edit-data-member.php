@@ -1,5 +1,7 @@
 <?php 
 
+include_once('../services/session.php');
+
 require '../services/functions.php';
 
 $fungsi = new member();

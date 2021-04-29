@@ -1,12 +1,14 @@
 <?php
 
-  require '../services/functions.php';
+include_once('../services/session.php');
 
-  $peminjam = mysqli_num_rows(lihatData("SELECT * FROM tb_peminjam"));
+require '../services/functions.php';
 
-  $buku = mysqli_num_rows(lihatData("SELECT * FROM tb_buku"));
+$peminjam = mysqli_num_rows(lihatData("SELECT * FROM tb_peminjam"));
 
-  $transaksi = mysqli_num_rows(lihatData("SELECT * FROM tb_data_peminjaman"));
+$buku = mysqli_num_rows(lihatData("SELECT * FROM tb_buku"));
+
+$transaksi = mysqli_num_rows(lihatData("SELECT * FROM tb_data_peminjaman"));
 
 
 

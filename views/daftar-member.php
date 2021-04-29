@@ -1,10 +1,12 @@
 <?php
 
-    require '../services/functions.php';
-    
-    $dataMember = tampilData("SELECT * FROM tb_peminjam");
+include_once('../services/session.php');
 
-    $no = 1;
+require '../services/functions.php';
+
+$dataMember = tampilData("SELECT * FROM tb_peminjam");
+
+$no = 1;
 
 ?>
 

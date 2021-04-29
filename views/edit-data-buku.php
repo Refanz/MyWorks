@@ -1,5 +1,7 @@
 <?php
 
+include_once('../services/session.php');
+
 require '../services/functions.php';
 
 $kodeBuku = $_GET['kodeBuku'];
@@ -10,7 +12,14 @@ if(isset($_POST['btnEdit'])){
 
     if(editData($_POST) > 0){
 
-        echo 'Berhasil';
+        echo "
+        
+        <script>
+            alert('Data berhasil diubah');
+            document.location.href = 'daftar-buku.php';
+        </script>
+        
+        ";
 
 
     }else{

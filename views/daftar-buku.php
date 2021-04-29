@@ -1,5 +1,6 @@
-
 <?php
+
+include_once('../services/session.php');
 
 require '../services/functions.php';
 
